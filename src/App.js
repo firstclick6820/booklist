@@ -1,23 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+
+// Import React Components
+import { useState } from "react";
+
+
+// Import React Router Components
+import { Routes, Route } from "react-router-dom";
+
+
+
+// Import custom Components
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Books from './components/Books';
+import Cars from './components/Cars'
+import Activists from "./components/Activists";
+import Restaurants from "./components/Restaurants";
+import Authors from "./components/Authors";
+import Products from "./components/Products";
+
+
+// import Custom pages
+import Home from './components/pages/Home';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+    <div className="container">
+        <Navbar />
+        <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="footer" element={<Footer />} />
+            <Route path="books" element={<Books />} />
+            <Route path="products" element={<Products />} />
+            <Route path="activists" element={<Activists />} /> 
+            <Route path="cars" element={<Cars />} />
+            <Route path="authors" element={<Authors />} />
+            <Route path="restaurants" element={<Restaurants />} />
+        </Routes>
     </div>
   );
 }
