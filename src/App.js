@@ -17,7 +17,7 @@ import Activists from "./components/Activists";
 import Restaurants from "./components/Restaurants";
 import Authors from "./components/Authors";
 import Products from "./components/Products";
-
+import Articles from './components/Articles'
 
 // import Custom pages
 import Home from './components/pages/Home';
@@ -35,6 +35,7 @@ function App() {
             <Route path="products" element={<Products />} />
             <Route path="activists" element={<Activists />} /> 
             <Route path="cars" element={<Cars />} />
+            <Route path="articles" element={<Articles /> } />
             <Route path="authors" element={<Authors />} />
             <Route path="restaurants" element={<Restaurants />} />
         </Routes>

@@ -4,3 +4,5 @@ export const ACTIVISTS_API_URL = 'https://example-data.draftbit.com/activists?_l
 export const RESTAURANTS_API_URL = 'https://example-data.draftbit.com/restaurants?_limit=50';
 export const AUTHORS_API_URL = "https://example-data.draftbit.com/authors?_limit=50";
 export const PRODUCTS_API_URL = 'https://example-data.draftbit.com/products?_limit=50';
+
+export const ARTICLES_API_URL = 'https://khaleej-news-api-application.herokuapp.com/';

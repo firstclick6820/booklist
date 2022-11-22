@@ -21,7 +21,7 @@ export const SiteData = [
     },
     {
       id: 1,
-      name: 'Countries',
+      name: 'Articles',
       count: 50
     },
     {
