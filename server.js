@@ -1,3 +1,6 @@
+// Define the local port
+const PORT = process.env.PORT || 3000;
+
 // server.js
 const express = require('express');
 const compression = require('compression');
@@ -12,7 +15,7 @@ app.get('*', function(req, res) {
     console.log('it is called')
 });
 
-const PORT = process.env.PORT || 3000;
+
 
 app.listen(PORT, () => {
     console.log(`App is running on port ${PORT}`);
