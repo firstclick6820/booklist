@@ -1,29 +1,32 @@
 // import custom style for the article card
 import '../assets/componenets__css/articleStyle.css'
-const Article = () => {
+const Article = ({data}) => {
+    const truncate = (str) =>  {
+        return str.length > 50 ? str.substring(0, 50) + "..." : str;
+        }
+    
   return (
 
-        <div class="container">
+
+        <div className="container">
+            {/* Id 
+            headline
+            link
+            summary
+            imagesList */}
                 <div className="card">
                     <div className="card-header">
-                    <img src="https://c0.wallpaperflare.com/preview/483/210/436/car-green-4x4-jeep.jpg" alt="rover" />
+                    <img src={data.imagesList} alt="rover" />
                     </div>
                     <div className="card-body">
-                    <span className="tag tag-teal">Technology</span>
-                    <h4>
-                        Why is the Tesla Cybertruck designed the way it
-                        is?
+                    <span className="tag tag-teal">Khaleej News</span>
+                    <h4 className="mt-3">
+                        <a href={data.link}>{truncate(data.headline)}</a>
                     </h4>
-                    <p>
-                        An exploration into the truck's polarising design
+                    <p className="mt-3">
+                        {truncate(data.summary)}
                     </p>
-                    <div className="user">
-                        <img src="https://yt3.ggpht.com/a/AGF-l7-0J1G0Ue0mcZMw-99kMeVuBmRxiPjyvIYONg=s900-c-k-c0xffffffff-no-rj-mo" alt="user" />
-                        <div className="user-info">
-                        <h5>July Dec</h5>
-                        <small>2h ago</small>
-                        </div>
-                    </div>
+                   
                     </div>
                 </div>      
         </div>

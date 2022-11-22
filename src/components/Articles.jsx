@@ -13,6 +13,8 @@ import axios from "axios";
 
 
 
+
+
 // Import data API
 import { ARTICLES_API_URL } from "../data/API";
 
@@ -20,13 +22,19 @@ import { ARTICLES_API_URL } from "../data/API";
 const Articles = () => {
     const [articles, setArticles] = useState(null)
 
+    const headers = {
+        "Content-Type": "application/json",
+      };
+    
+    
 
 
     // call to the API using react useEffect hook and axios
 
     useEffect(() => {
-        axios.get(ARTICLES_API_URL).then((res)=> {
+        axios.get(ARTICLES_API_URL, {headers}).then((res)=> {
             setArticles(res.data);
+            
         }).catch((err)=> {
             console.log(err)
         })
@@ -39,9 +47,14 @@ const Articles = () => {
     
   return (
     <div className="wrapper--container">
-        <Article />    
+        
 
+        { 
+            articles.map((article, index) => 
 
+                article.imagesList? <Article key={index}  data={article}/> : null
+        )}
+        
     </div>
   )
 }
