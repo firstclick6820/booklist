@@ -27,9 +27,8 @@ const Articles = () => {
     useEffect(() => {
         axios.get(ARTICLES_API_URL).then((res)=> {
             setArticles(res.data);
-         
-
-
+        }).catch((err)=> {
+            console.log(err)
         })
     }, [])
 
